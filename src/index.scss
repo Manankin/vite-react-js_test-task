@@ -1,11 +1,15 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
 }
 
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 a {
@@ -15,7 +19,8 @@ a {
 
 body {
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
