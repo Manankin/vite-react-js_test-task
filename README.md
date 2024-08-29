@@ -7,4 +7,5 @@
 - create Layout page
 - create EditUser page layout
 - create Users page layout
+- add data(statuses, departments, countries) to select form in Users page
 

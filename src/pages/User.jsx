@@ -1,7 +1,15 @@
 import '../assets/styles/users.scss'
-import {users} from '../assets/data/person';
+import { users } from '../assets/data/person';
+import { countries } from '../assets/data/countries';
+import { statuses } from '../assets/data/statuses';
+import { departments } from '../assets/data/departments';
+import addIndex from '../assets/data/features';
 
 export default function User() {
+  const countryList = addIndex(countries);
+  const usersList = addIndex(users);
+  const departmentList = addIndex(departments);
+
   return (
     <div className="container">
       <div className="users-block">
@@ -12,34 +20,29 @@ export default function User() {
             <div className='filters__list'>
               <div className='filters__select'>
                 <select name="user_cars">
-                  <option value="1">Nissan</option>
-                  <option value="2">Toyota</option>
-                  <option value="3">BMW</option>
-                  <option value="4">Wolksvagen</option>
-                  <option value="5">Skoda</option>
-                  <option value="6">Mercedes-Benz</option>
+                  <option value="" className='selected'>Choose department</option>
+                  {departmentList.map((elem) => (
+                    <option value={elem.value} key={elem.id}>{elem.name}</option>
+                  ))
+
+                  }
                 </select>
               </div>
 
               <div className='filters__select'>
                 <select name="user_profile_color_1" >
-                  <option value="1">Синий</option>
-                  <option value="2">Зеленый</option>
-                  <option value="3">Желтый</option>
-                  <option value="4">Красный</option>
-                  <option value="5">Оранжевый</option>
-                  <option value="6">Черный</option>
+                  <option value="" className='selected'>Select country</option>
+                  {countryList.map(elem => (
+                    <option value={elem.value} key={elem.id}>{elem.name}</option>
+                  ))}
                 </select>
               </div>
 
-              <div className='filters__select' aria-disabled>
+              <div className='filters__select'>
                 <select name="" id="">
-                  <option value="1">Синий</option>
-                  <option value="2">Зеленый</option>
-                  <option value="3">Желтый</option>
-                  <option value="4">Красный</option>
-                  <option value="5">Оранжевый</option>
-                  <option value="6">Черный</option>
+                  {statuses.map(elem => (
+                    <option value={elem.value} key={elem.name}>{elem.name}</option>
+                  ))}
                 </select>
               </div>
 
@@ -59,8 +62,8 @@ export default function User() {
             <div className="item--head">Status</div>
           </div>
 
-          {users.map(user => (
-            <div className="users-list__item item grid" key={user.name}>
+          {usersList.map(user => (
+            <div className="users-list__item item grid" key={user.id}>
               <div className="item--name">{user.name}</div>
               <div className="item">{user.department.name}</div>
               <div className="item">{user.country.name}</div>

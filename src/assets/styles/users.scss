@@ -66,6 +66,10 @@
       background-image: url('../../assets/images/chevron-down.svg');
       background-repeat: no-repeat;
       background-position: right 20px center;
+
+      & option:first-child {
+        color: #c2c2c2;
+      }
     }
 
     select:focus {
