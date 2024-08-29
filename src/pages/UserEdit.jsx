@@ -1,12 +1,9 @@
 import '../assets/styles/edit.scss';
-import { users } from '../assets/data/person'
 
 export default function UserEdit() {
-  const userList = users;
 
   return (
     <div className="container">
-
       <div className="edit-block">
         <h2 className='edit-block__title'>Edit user</h2>
 

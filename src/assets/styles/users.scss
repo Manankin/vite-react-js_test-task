@@ -1,0 +1,137 @@
+.users-block {
+  height: 100%;
+  border: 1px solid #000;
+  padding: 60px 80px 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+
+  &__title {
+    align-self: center;
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  &__filters {
+    width: 100%;
+    text-align: start;
+
+    p {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.01em;
+      color: #1b2438;
+    }
+  }
+
+  &__filters-list {
+    margin-top: 12px;
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters__list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+
+  .filters__select {
+    border: 1px solid #e3e8ee;
+    // padding: 8px 12px 8px 24px;
+    width: 220px;
+    height: 48px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    select {
+      appearance: none;
+      width: 100%;
+      padding: 8px 24px 8px 12px;
+      border: none;
+      outline: none;
+      background-image: url('../../assets/images/chevron-down.svg');
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+    }
+
+    select:focus {
+      background-image: url('../../assets/images/chevron-up.svg');
+    }
+
+    .selected {
+      display: none;
+    }
+  }
+
+  .filters__reset {
+    margin-left: 8px;
+    width: 48px;
+    height: 48px;
+    background-image: url('../../assets/images/remove.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #e3e8ee;
+  }
+}
+
+.users-list {
+  border: 1px solid #e3e8ee;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 200px minmax(200px, 1fr) 200px 100px 24px;
+  gap: 20px;
+  justify-content: start;
+  align-items: center;
+  padding: 28px 36px;
+  text-align: left;
+}
+
+.item {
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #5e626b;
+
+  &:first-child {
+    border-bottom: 1px solid #e3e8ee;
+  }
+
+  &--head {
+    font-weight: 700;
+    color: #000;
+  }
+
+  &--name {
+    color: #1b2438;
+    font-weight: 400;
+  }
+
+  &--remove {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/images/remove.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
