@@ -1,13 +1,15 @@
 import '../assets/styles/users.scss'
-import { users } from '../assets/data/person';
 import { countries } from '../assets/data/countries';
 import { statuses } from '../assets/data/statuses';
 import { departments } from '../assets/data/departments';
 import addIndex from '../assets/data/features';
+import { UserContext } from '../components/UsersContext';
+import { useContext } from 'react';
 
 export default function User() {
+  const {usersList, setUsersList} = useContext(UserContext)
   const countryList = addIndex(countries);
-  const usersList = addIndex(users);
+  // const usersList = addIndex(users)
   const departmentList = addIndex(departments);
 
   return (

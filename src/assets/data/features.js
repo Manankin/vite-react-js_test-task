@@ -8,3 +8,7 @@ export default function addIndex(arr) {
 
   return result;
 }
+
+function removeUser(users, id) {
+  return users.filter((user) => user.id !== id)
+}

@@ -1,6 +1,10 @@
+/* eslint-disable no-unused-vars */
+import { useContext } from 'react';
 import '../assets/styles/edit.scss';
+import { UserContext } from '../components/UsersContext';
 
 export default function UserEdit() {
+  const {usersList} = useContext(UserContext);
 
   return (
     <div className="container">
