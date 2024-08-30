@@ -6,6 +6,11 @@ import addIndex from '../assets/data/features';
 import { UserContext } from '../components/UsersContext';
 import { useContext } from 'react';
 
+
+function removeUser(users, id) {
+  return users.filter((user) => user.id !== id)
+}
+
 export default function User() {
   const {usersList, setUsersList} = useContext(UserContext)
   const countryList = addIndex(countries);
@@ -48,7 +53,7 @@ export default function User() {
                 </select>
               </div>
 
-              <div className="filters__reset remove-btn">
+              <div className="filters__reset btn remove-btn">
 
               </div>
             </div>
@@ -70,7 +75,9 @@ export default function User() {
               <div className="item">{user.department.name}</div>
               <div className="item">{user.country.name}</div>
               <div className="item">{user.status.name}</div>
-              <div className="item--remove"></div>
+              <div className="item--remove btn btn--clear"
+                onClick={() => setUsersList(removeUser(usersList, user.id))}
+              ></div>
             </div>
           ))}
 

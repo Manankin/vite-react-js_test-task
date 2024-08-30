@@ -8,5 +8,6 @@
 - create EditUser page layout
 - create Users page layout
 - add data(statuses, departments, countries) to select form in Users page
-- create Context state managment 
+- create Context state managment for user list
+- add remove user function and connect it to button in Users page
 
